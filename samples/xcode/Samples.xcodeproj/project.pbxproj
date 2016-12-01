@@ -449,7 +449,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CINDER_PATH = "$(CINDER_PATH_IN_BLOCKS)";
-				CINDER_PATH_ADJACENT = ../../../cinder/;
+				CINDER_PATH_ADJACENT = ../../../cinder;
+				CINDER_PATH_PROJECT = ../../../../../cinder;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -464,12 +465,13 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH_PROJECT)/include\"";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder_d.a\"";
+				OTHER_LDFLAGS = "\"$(CINDER_PATH_PROJECT)/lib/macosx/$(CONFIGURATION)/libcinder.a\"";
 				PRODUCT_NAME = Samples;
 				SYMROOT = ./build;
-				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../src ../src";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH_PROJECT)/include\" ../include ../../src ../src";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -478,7 +480,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CINDER_PATH = "$(CINDER_PATH_IN_BLOCKS)";
-				CINDER_PATH_ADJACENT = ../../../cinder/;
+				CINDER_PATH_ADJACENT = ../../../cinder;
+				CINDER_PATH_PROJECT = ../../../../../cinder;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -494,13 +497,14 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH_PROJECT)/include\"";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder.a\"";
+				OTHER_LDFLAGS = "\"$(CINDER_PATH_PROJECT)/lib/macosx/$(CONFIGURATION)/libcinder.a\"";
 				PRODUCT_NAME = Samples;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = ./build;
-				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../src ../src";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH_PROJECT)/include\" ../include ../../src ../src";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
