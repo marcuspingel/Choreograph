@@ -27,6 +27,8 @@ DerivedData
 *.sln.docstates
 *.sdf
 *.opensdf
+*.VC.db
+*.VC.VC.opendb
 
 # Build results
 [Dd]ebug/
