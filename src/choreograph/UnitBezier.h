@@ -70,8 +70,8 @@ public:
   }
 
   /// Given a value x, solve for y on the curve.
-  double solve(double x, double epsilon = std::numeric_limits<float>::epsilon() * 100.0f) const {
-    return curveY(timeAtX(x, epsilon));
+  double solve( double x, double epsilon = static_cast<double>( std::numeric_limits<float>::epsilon() * 100.0f ) ) const {
+    return curveY(timeAtX( static_cast<float>( x ), static_cast<float>( epsilon )));
   }
 
   vec2 control1() const { return _control_1; }
@@ -90,7 +90,7 @@ public:
 
   float curveX(double t) const {
     // at^3 + bt^2 + ct expanded using Horner's rule.
-    return ((ax * t + bx) * t + cx) * t;
+    return static_cast<float>( ((ax * t + bx) * t + cx) * t );
   }
 
   float curveY(double t) const {

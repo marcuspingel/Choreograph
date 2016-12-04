@@ -73,7 +73,7 @@ inline float Curve::solve(float t) const
 {
   switch (_type) {
     case Bezier:
-      return _bezier.solve(t);
+      return static_cast<float>( _bezier.solve(t) );
     break;
     case Hold:
       return 0.0f;
