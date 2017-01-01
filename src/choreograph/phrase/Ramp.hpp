@@ -70,7 +70,7 @@ public:
   /// Returns the interpolated value at the given time.
   T getValue( Time at_time ) const override
   {
-    return _lerp_fn( _start_value, _end_value, _ease_fn( this->normalizeTime( at_time ) ) );
+    return _lerp_fn( _start_value, _end_value, _ease_fn( static_cast<float>( this->normalizeTime( at_time ) ) ) );
   }
 
   T getStartValue() const override { return _start_value; }
