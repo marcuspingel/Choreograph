@@ -26,7 +26,10 @@
  */
 
 #include "Timeline.h"
+
 #include "detail/VectorManipulation.hpp"
+
+#include <iterator>
 
 using namespace choreograph;
 
