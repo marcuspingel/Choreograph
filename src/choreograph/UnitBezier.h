@@ -93,17 +93,17 @@ public:
     return static_cast<float>( ((ax * t + bx) * t + cx) * t );
   }
 
-  float curveY(double t) const {
-    return ((ay * t + by) * t + cy) * t;
+  [[nodiscard]] float curveY( double t ) const {
+    return static_cast<float>( ( ( ay * t + by ) * t + cy ) * t );
   }
 
-  float derivativeX(double t) const {
+  [[nodiscard]] float derivativeX( double t ) const {
     // 3at^2 + 2bt + c
-    return (3 * ax * t + 2 * bx) * t + cx;
+    return static_cast<float>( ( 3 * ax * t + 2 * bx ) * t + cx );
   }
 
   /// Given an x value, find a parameter t that generates it.
-  float timeAtX(float x, float epsilon) const;
+  [[nodiscard]] float timeAtX( float x, float epsilon ) const;
 
 private:
   vec2 _control_1, _control_2;
